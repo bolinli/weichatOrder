@@ -2,8 +2,7 @@ package yMybatis;
 
 import java.io.IOException;
 
-import org.yi.po.Order;
-import org.yi.po.OrderInfo;
+import org.order.po.OrderInfo;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;

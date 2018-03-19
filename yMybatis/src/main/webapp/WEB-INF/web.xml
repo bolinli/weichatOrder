@@ -11,7 +11,7 @@
 		<!-- DispatcherServlet的初始化方法会启动spring容器， contextConfigLocation用于指定spring配置文件的位置 -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring_*.xml</param-value>
+			<param-value>classpath:spring_*.xml,classpath:configuration.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

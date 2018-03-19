@@ -31,10 +31,10 @@
 		<logger name="org.slf4j" level="info" />
 		<logger name="org.springframework" level="info" />
 		<logger name="org.springframework.web" level="debug" />
-		<Logger name="org.yi" level="info">
+		<Logger name="org.order" level="info">
             <AppenderRef ref="ProductLog" />
         </Logger>
-		<Logger name="org.yi" level="debug">
+		<Logger name="org.order" level="debug">
 			<AppenderRef ref="Console" />
             <AppenderRef ref="ProductLog" />
         </Logger>
