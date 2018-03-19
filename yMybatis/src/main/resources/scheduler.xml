@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:c="http://www.springframework.org/schema/c" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!--<bean id="schedulerFactoryBean"-->
+		<!--class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+		<!--<description>定时任务调度器工厂</description>-->
+		<!--<property name="schedulerName" value="CiCi-Scheduler" />-->
+		<!--<property name="applicationContextSchedulerContextKey" value="applicationContext" />-->
+		<!--<property name="configLocation" value="classpath:quartz.properties" />-->
+		<!--&lt;!&ndash;<property name="dataSource" ref="dataSource" />&ndash;&gt;-->
+	<!--</bean>-->
+
+	<bean id="sendTask" class="org.order.commons.sendTask"/>
+	
+	<bean id="sendEmailTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sendTask"/>
+		<property name="targetMethod" value="sendEmail"/>
+	</bean>
+
+	<!--配合触发器-->
+	<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="sendEmailTask"/>
+		<property name="cronExpression" value="0/10 * * * * ?"/>
+	</bean>
+
+	<!--配置调度工厂-->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="CronTriggerBean"/>
+			</list>
+		</property>
+	</bean>
+</beans>

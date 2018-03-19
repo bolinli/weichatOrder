@@ -6,13 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="yMybatis" />
         <module name="yMybatis (1)" />
         <module name="yMybatis (3)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="maven-archiver" target="1.5" />
-      <module name="yMybatis (1)" target="1.5" />
+      <module name="yMybatis" target="1.8" />
+      <module name="yMybatis (1)" target="1.8" />
       <module name="yMybatis (2)" target="1.5" />
       <module name="yMybatis (3)" target="1.5" />
     </bytecodeTargetLevel>

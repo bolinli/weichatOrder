@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/yMybatis/yMybatis.iml" filepath="$PROJECT_DIR$/yMybatis/yMybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/yMybatis/yMybatis (1).iml" filepath="$PROJECT_DIR$/yMybatis/yMybatis (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/yMybatis/target/m2e-wtp/web-resources/META-INF/maven/com.yi/yMybatis/yMybatis (3).iml" filepath="$PROJECT_DIR$/yMybatis/target/m2e-wtp/web-resources/META-INF/maven/com.yi/yMybatis/yMybatis (3).iml" />
     </modules>
