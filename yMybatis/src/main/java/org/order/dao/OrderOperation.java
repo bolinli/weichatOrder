@@ -15,12 +15,13 @@ public class OrderOperation {
 	private String getAllStatement = "dao.orderMapper.getAll";
 	private String insertStatement = "dao.orderMapper.insert";
 	private String deleteStatement="dao.orderMapper.deleteAll";
+	private String deleteByIdStatement="dao.orderMapper.deleteById";
 
-	public List<Object> getAll() throws IOException {
+	public List<Object> getAll(String nickName) throws IOException {
 		OrderOperation orderOperation = new OrderOperation();
 		String statement = orderOperation.getAllStatement;
 		SqlSession session = orderOperation.getSession();
-		List<Object> carts = session.selectList(statement);// 捕获所有对象
+		List<Object> carts = session.selectList(statement,nickName);// 捕获所有对象
 		return carts;
 	}
 	
@@ -38,7 +39,13 @@ public class OrderOperation {
 		session.insert(statement);
 		session.commit();
 	}
-	
+	public void deleteById(Integer id) {
+		OrderOperation orderOperation=new OrderOperation();
+		String statement=orderOperation.deleteByIdStatement;
+		SqlSession session=orderOperation.getSession();
+		session.delete(statement,id);
+		session.commit();
+	}
 	
 	public SqlSession getSession() {
 		String resource = "configuration.xml";

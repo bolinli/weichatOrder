@@ -1,0 +1,2 @@
+INSERT INTO `orders` (`order_id`, `good_name`, `good_price`, `good_main_url`, `good_num`, `name`, `depart`, `nickName`) VALUES (5, '2016韩版防晒衣女夏薄沙滩中长款长袖蕾丝百搭开衫大码外套空调衫-淘宝网', 32.00, 'http://127.0.0.1:8080/images/2016韩版防晒衣女夏薄沙滩中长款长袖蕾丝百搭开衫大码外套空调衫-淘宝网/main.jpg', 1, NULL, NULL, '柏林');
+INSERT INTO `orders` (`order_id`, `good_name`, `good_price`, `good_main_url`, `good_num`, `name`, `depart`, `nickName`) VALUES (6, 'sdf', 13.00, 'sdfa', 23, NULL, NULL, 'ds');

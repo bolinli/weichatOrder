@@ -24,7 +24,7 @@ public class CartController {
 	
 	@RequestMapping(value="/get_all",produces = "application/json; charset=utf-8",method= RequestMethod.GET)
 	@ResponseBody
-	public Object getAll() throws IOException {
+	public Object getAll(HttpServletRequest req) throws IOException {
 		List<Object> results=cartOperation.getAll();
 		ObjectMapper mapper=new ObjectMapper();
 		String ret=mapper.writeValueAsString(results);
